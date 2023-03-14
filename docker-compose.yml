@@ -1,24 +1,32 @@
-version: 'version'
+version: '3.9'
 
 services:
   client:
-     container_name: 
-     build:
-     ports:
+     container_name: yolo-client
+     build: ./client
+     ports: 
+       - "3000:3000"
      depends_on:
+       - backend
      networks:
+       - yolo-network 
   backend:
-     container_name: 
-     build:
-     ports:
+     container_name: yolo-backend
+     build: ./backend
+     ports: 
+       - "5000:5000"
      depends_on:
-     networks:
+       - database
+     networks: 
+       - yolo-network
   database:
-     image:
-     container_name: 
+     image: mongo
+     container_name: yolo-mongodb
      ports:
+      - "27017:27017"
      networks:
+      - yolo-network
   networks:
     yolo-network:
-     driver:
+     driver: bridge
 
