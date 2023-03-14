@@ -1,0 +1,24 @@
+version: 'version'
+
+services:
+  client:
+     container_name: 
+     build:
+     ports:
+     depends_on:
+     networks:
+  backend:
+     container_name: 
+     build:
+     ports:
+     depends_on:
+     networks:
+  database:
+     image:
+     container_name: 
+     ports:
+     networks:
+  networks:
+    yolo-network:
+     driver:
+
