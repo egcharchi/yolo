@@ -13,12 +13,13 @@ services:
   backend:
      container_name: yolo-backend
      build: ./backend
-     environment:
-       - MONGO_URI=mongodb://database:27017/yolomy
+     #environment:
+      # - MONGO_URI=mongodb://database:27017
      ports: 
        - "5000:5000"
      depends_on:
-       - database
+       database:
+         condition: service_started
      networks: 
        - yolo-network
   database:
