@@ -26,7 +26,8 @@ services:
       - "27017:27017"
      networks:
       - yolo-network
-  networks:
-    yolo-network:
-     driver: bridge
+networks:
+  yolo-network:
+    name: yolo-network
+    driver: bridge
 
