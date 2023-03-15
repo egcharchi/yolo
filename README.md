@@ -1,4 +1,7 @@
 # Requirements IPO2
+## Detailed Explanation available on linked explanation.md
+[explanation.md](https://github.com/egcharchi/yolo/blob/master/explanation.md)
+## Instructions below were used as a guideline
 Make sure that you have the following installed:
 - [node](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04) 
 - npm 
