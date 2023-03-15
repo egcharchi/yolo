@@ -1,13 +1,13 @@
-FROM node:alpine
+FROM egcharchi/yolo-backend:1.0.0
 
-WORKDIR /app
+WORKDIR /backend
 
 COPY package.json package.json
 
 RUN npm install
 
-COPY . .
+COPY . /backend
 
-EXPOSE 3000
+EXPOSE 5000
 
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "start" ]

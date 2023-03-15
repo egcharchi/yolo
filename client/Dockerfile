@@ -1,6 +1,6 @@
-FROM node:alpine
+FROM egcharchi/yolo-client:1.0.0
 
-WORKDIR /app
+WORKDIR /client
 
 COPY package.json package.json
 
@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 5000
+EXPOSE 3000
 
-CMD [ "npm", "start" ]
+CMD [ "npm", "run" , "start" ]
 
