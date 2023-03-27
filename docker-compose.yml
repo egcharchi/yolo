@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3.8'
 
 services:
   client:
@@ -6,6 +6,7 @@ services:
      build: ./client
      ports: 
        - "3000:3000"
+     stdin_open: true
      depends_on:
        - backend
      networks:
@@ -22,7 +23,7 @@ services:
      networks: 
        - yolo-network
   database:
-     image: egcharchi/yolo-mongodb:1.0.0
+     image: egcharchi/yolo-mongodb:1.0.1
      container_name: yolo-mongodb
      ports:
       - "27017:27017"

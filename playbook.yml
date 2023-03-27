@@ -1,5 +1,18 @@
 ---
-- hosts: all
-  become: yes
+- name: Provision using Ansible and Vagrant an e-Commerce application on Docker
+  hosts: all
+  become: true
+  vars:
+     github_repo: https://github.com/egcharchi/yolo.git
+     network: 192.168.56.53
+     exposed_port: "3000"
+     client_img: yolo-client:1.0.1
+     backend_img: yolo-backend:1.0.1
+     db_img: yolo-mongodb:1.0.1
+     client_port: "3000:3000"
+     backend_port: "5000:5000"
+     db_port: "27017:27017"
+
+
   tasks:
   - name:
