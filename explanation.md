@@ -1,5 +1,5 @@
 ## This is the explanation file for the IP assignment
-
+IP03 Requires us to make use of Ansible and Vagrant to be able to launch the application.
 ## Image Choices - Not more than 400mb, pushed to dockerhub
 Chose the official node/alpine image as it was small, and the official mongo image for the db container
 ## Docker Directives
