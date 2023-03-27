@@ -1,5 +1,5 @@
 ## This is the explanation file for the IP assignment
-IP03 Requires us to make use of Ansible and Vagrant to be able to launch the application.
+IP03 Requires us to make use of Ansible and Vagrant to be able to launch the application.  More Details after IP02 content below.
 ## Image Choices - Not more than 400mb, pushed to dockerhub
 Chose the official node/alpine image as it was small, and the official mongo image for the db container
 ## Docker Directives
@@ -40,3 +40,5 @@ I did many local commits before pushing to github, each with a description of th
 I am yet to successfully deploy on a cloud service provider, I am working on heroku.
 ## Best Practices Followed - image tagging
 Images were pulled, built and tagged using semver convention [repository]/[image]:[tag] in which the tag consists of [version.subversion.patch] eg. 1.0.0
+
+## Running on Vagrant and Provisioning with Ansible - IP03
