@@ -40,4 +40,4 @@ spec:
   ports:
   - port: 5000
     targetPort: 5000
-  type: NodePort
+  type: ClusterIP
