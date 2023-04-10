@@ -1,5 +1,5 @@
 ## This is the explanation file for the IP assignment
-IP03 Requires us to make use of Ansible and Vagrant to be able to launch the application.  More Details after IP02 content below.
+IP04 Requires us to deploy our application as run in IP02 on Google Kubernetes Engine.. More Details after IP02 content below.
 ## Image Choices - Not more than 400mb, pushed to dockerhub
 Chose the official node/alpine image as it was small, and the official mongo image for the db container
 ## Docker Directives
@@ -62,3 +62,11 @@ Vagrant.configure("2") do |config|
  end
  
  I wanted the ansible feedback to be verbose so as to catch any issues easily.
+
+## Deployment oon Google Kubernetes Engine - IP04
+1.) Choice of the Kubernetes Objects used for deployment (Use of - or the lack of use - of StatefulSets for storage solutions).
+Method used to expose your pods to internet traffic.
+2.) Use-of or there-lack-of of persistent storage.
+3.) Git workflow used to achieve the task.
+4.) Successful running of the applications from the link provided in your github Repositorys README.md, if not the debugging measures applied.
+5.) Good practices such as Docker image tag naming standards for ease of identification and personalization of images and containers. 
