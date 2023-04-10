@@ -28,3 +28,16 @@ spec:
     #  - name: data
      #   persistentVolumeClaim:
       #    claimName: yolo-mongodb-data
+---
+#Frontend Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: yolo-backend-svc
+spec:
+  selector:
+    app: yolo
+  ports:
+  - port: 5000
+    targetPort: 5000
+  type: NodePort

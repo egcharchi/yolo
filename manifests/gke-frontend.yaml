@@ -25,7 +25,20 @@ spec:
         ports:
         - containerPort: 3000
 ---
-#Frontend Service
+#Frontend Service - Nodeport
+apiVersion: v1
+kind: Service
+metadata:
+  name: yolo-client-svc
+spec:
+  selector:
+    app: yolo
+  ports:
+  - port: 3000
+    targetPort: 3000
+  type: NodePort
+---
+#Frontend Service Loadbalancer
 apiVersion: v1
 kind: Service
 metadata:

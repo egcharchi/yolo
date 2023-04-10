@@ -48,4 +48,18 @@ spec:
   accessModes:
     - ReadWriteOnce
 
+---
+#Frontend Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: yolo-mongo-svc
+spec:
+  selector:
+    app: yolo
+  ports:
+  - port: 27017
+    targetPort: 27017
+  type: NodePort
+
 
