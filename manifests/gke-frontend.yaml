@@ -1,0 +1,39 @@
+# Client Side Container - Frontend
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yolo-client-deployment
+spec:
+  selector:
+    matchLabels:
+      app: yolo
+  template:
+    metadata:
+      labels:
+        app: yolo
+    spec:
+      containers:
+      - name: yolo-client
+        image: gcr.io/google-containers/busybox
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "100m"
+          limits:
+            memory: "2Gi"
+            cpu: "250m"
+        ports:
+        - containerPort: 3000
+---
+#Frontend Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: yolo-client-svc
+spec:
+  selector:
+    app: yolo
+  ports:
+  - port: 80
+    targetPort: 3000
+  type: NodePort

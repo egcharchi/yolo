@@ -6,11 +6,11 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: yolo-mongodb
+      app: yolo
   template:
     metadata:
       labels:
-        app: yolo-mongodb
+        app: yolo
     spec:
       containers:
       - name: yolo-mongodb
@@ -39,7 +39,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: yolo-mongodb-data
   labels: 
-    app: yolo-mongodb
+    app: yolo
 spec:
   resources:
     requests:
@@ -47,19 +47,5 @@ spec:
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
----
-#MongoDB Service - DB
-apiVersion: v1
-kind: Service
-metadata:
-  name: yolo-mongodb-svc
-spec:
-  selector:
-    app: yolo-mongodb
-  ports:
-  - port: 27017
-    targetPort: 27017
-  type: NodePort
-  
 
 

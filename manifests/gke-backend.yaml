@@ -1,0 +1,30 @@
+# Backend Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yolo-backend-deployment
+spec:
+  selector:
+    matchLabels:
+      app: yolo
+  template:
+    metadata:
+      labels:
+        app: yolo
+    spec:
+      containers:
+      - name: yolo-backend
+        image: gcr.io/google-containers/busybox
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "250m"
+          limits:
+            memory: "4Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5000
+    #volumes:
+    #  - name: data
+     #   persistentVolumeClaim:
+      #    claimName: yolo-mongodb-data
