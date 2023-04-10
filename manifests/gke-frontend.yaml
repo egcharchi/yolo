@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: yolo-client
-        image: gcr.io/google-containers/busybox
+        image: me-central1-docker.pkg.dev/moringak8s-382916/ip4-repo1/yolo-client-k8s:1.0.0
         resources:
           requests:
             memory: "1Gi"
