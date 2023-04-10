@@ -27,8 +27,8 @@ spec:
             command:
             - cat
             - /tmp/healthy
-          initialDelaySeconds: 5
-          periodSeconds: 25
+          initialDelaySeconds: 3
+          periodSeconds: 10
         ports:
         - containerPort: 3000
 ---
@@ -41,7 +41,7 @@ spec:
   selector:
     app: yolo
   ports:
-  - port: 31637
+  - port: 3000
     targetPort: 3000
   type: ClusterIP
 ---
@@ -54,6 +54,7 @@ spec:
   selector:
     app: yolo
   ports:
-  - port: 80
-    targetPort: 3000
+  - port: 3000
+    #targetPort: 3000
+    protocol: TCP
   type: LoadBalancer
