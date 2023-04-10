@@ -1,0 +1,65 @@
+##Mongo Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yolo-mongodb-deployment
+spec:
+  selector:
+    matchLabels:
+      app: yolo-mongodb
+  template:
+    metadata:
+      labels:
+        app: yolo-mongodb
+    spec:
+      containers:
+      - name: yolo-mongodb
+        image: gcr.io/google-containers/busybox
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "200m"
+          limits:
+            memory: "8Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 27017
+        volumeMounts:
+        - name: data
+          mountPath: /data
+          readOnly: false
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: yolo-mongodb-data
+---
+# Persistent Volume Claim - Data
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: yolo-mongodb-data
+  labels: 
+    app: yolo-mongodb
+spec:
+  resources:
+    requests:
+      storage: 50Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+---
+#MongoDB Service - DB
+apiVersion: v1
+kind: Service
+metadata:
+  name: yolo-mongodb-svc
+spec:
+  selector:
+    app: yolo-mongodb
+  ports:
+  - port: 27017
+    targetPort: 27017
+  type: NodePort
+  
+
+
