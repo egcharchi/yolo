@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: yolo-mongodb
-        image: gcr.io/google-containers/busybox
+        image: me-central1-docker.pkg.dev/moringak8s-382916/ip4-repo1/yolo-mongodb-k8s:1.0.0
         resources:
           requests:
             memory: "2Gi"
